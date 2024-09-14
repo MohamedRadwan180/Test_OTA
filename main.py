@@ -9,4 +9,4 @@ print('Blinking LED Example')
 # Infinite loop to toggle the LED on and off
 while True:
     led.value(not led.value())  # Toggle the LED state
-    sleep(0.5)  # Wait for 0.5 seconds
+    sleep(2)  # Wait for 0.5 seconds

@@ -1,12 +1,29 @@
-from machine import Pin
+# main.py
+
+from ota import ota_update
 from time import sleep
+from machine import Pin
 
-# Initialize the built-in LED (Pin 'LED' on Raspberry Pi Pico)
-led = Pin('LED', Pin.OUT)
+# Interval in seconds between OTA checks (e.g., every 24 hours)
+OTA_CHECK_INTERVAL = 1000 # 24 hours in seconds
 
-print('Blinking LED Example')
-
-# Infinite loop to toggle the LED on and off
+# Main loop
 while True:
-    led.value(not led.value())  # Toggle the LED state
-    sleep(2)  # Wait for 0.5 seconds
+    # Check for OTA updates
+    print("Checking for OTA updates...")
+    ota_update()
+    
+    # Add your main application logic below
+    print("Running main program logic...")
+    
+    # Example of main application logic: blinking an LED (adjust this to your needs)
+    led = Pin('LED', Pin.OUT)
+    
+    # Blink the LED as the main application logic
+    for i in range(10):  # Blink 10 times
+        led.toggle()
+        sleep(0.5)  # Delay for 0.5 seconds
+
+    # Sleep for OTA_CHECK_INTERVAL to avoid continuous checking
+    print(f"Sleeping for {OTA_CHECK_INTERVAL} seconds before the next OTA check.")
+    sleep(OTA_CHECK_INTERVAL)  # Sleep for the defined interval

@@ -22,7 +22,7 @@ while True:
     # Blink the LED as the main application logic
     for i in range(10):  # Blink 10 times
         led.toggle()
-        sleep(0.5)  # Delay for 0.5 seconds
+        sleep(1)  # Delay for 0.5 seconds
 
     # Sleep for OTA_CHECK_INTERVAL to avoid continuous checking
     print(f"Sleeping for {OTA_CHECK_INTERVAL} seconds before the next OTA check.")

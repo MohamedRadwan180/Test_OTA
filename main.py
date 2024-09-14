@@ -5,7 +5,7 @@ from time import sleep
 from machine import Pin
 
 # Interval in seconds between OTA checks (e.g., every 24 hours)
-OTA_CHECK_INTERVAL = 1000 # 24 hours in seconds
+OTA_CHECK_INTERVAL = 3 # 24 hours in seconds
 
 # Main loop
 while True:
